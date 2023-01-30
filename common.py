@@ -1,3 +1,5 @@
+from functools import partial
+from itertools import islice
 import re
 
 
@@ -31,3 +33,14 @@ def matrix(data, w, h):
 
 def col(data, c):
     return [d[c] for d in data]
+
+
+def take(n, iterable):
+    """Return first n items of the iterable as a list"""
+    return list(islice(iterable, n))
+
+
+def chunked(iterable, n):
+    """Break iterable into lists of size n"""
+    return iter(partial(take, n, iter(iterable)), [])
+
