@@ -43,4 +43,3 @@ def take(n, iterable):
 def chunked(iterable, n):
     """Break iterable into lists of size n"""
     return iter(partial(take, n, iter(iterable)), [])
-

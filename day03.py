@@ -5,15 +5,16 @@ import string
 
 def priority(c):
     if c in string.ascii_lowercase:
-        return ord(c) - ord('a') + 1
+        return ord(c) - ord("a") + 1
     else:
-        return ord(c) - ord('A') + 27
+        return ord(c) - ord("A") + 27
 
 
 # part 1
 
+
 def find_duplicated(rs):
-    c1, c2 = rs[:len(rs) // 2], rs[len(rs) // 2:]
+    c1, c2 = rs[: len(rs) // 2], rs[len(rs) // 2 :]
     return (set(c1) & set(c2)).pop()
 
 
@@ -26,6 +27,7 @@ for rs in rucksacks:
 print(priorities)
 
 # part 2
+
 
 def find_common(rucksacks):
     rucksack_items = map(set, rucksacks)
