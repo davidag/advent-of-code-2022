@@ -20,11 +20,11 @@ def score(r):
     return shape[r[1]] + outcome[r]
 
 
-# part 1
+# part 1: score according to given strategy
 
 print(sum(score(r) for r in rounds))
 
-# part 2
+# part 2: score according to new strategy
 
 
 def decrypt_rounds(rounds):

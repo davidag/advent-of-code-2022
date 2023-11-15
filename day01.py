@@ -17,10 +17,10 @@ def get_elf_calories(raw_calories):
 
 elf_calories = sorted(get_elf_calories(raw_calories))
 
-# part one
+# part one: elf carrying the most calories
 
 print(elf_calories[-1])
 
-# part two
+# part two: calories carried by the top 3 elves carrying the most calories
 
 print(sum(elf_calories[-3:]))

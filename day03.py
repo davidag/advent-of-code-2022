@@ -3,14 +3,14 @@ import common as c
 import string
 
 
+# part 1: sum of priorities of items in both compartments
+
+
 def priority(c):
     if c in string.ascii_lowercase:
         return ord(c) - ord("a") + 1
     else:
         return ord(c) - ord("A") + 27
-
-
-# part 1
 
 
 def find_duplicated(rs):
@@ -26,7 +26,7 @@ for rs in rucksacks:
 
 print(priorities)
 
-# part 2
+# part 2: sum of priorities of badges of each three-elf group
 
 
 def find_common(rucksacks):
