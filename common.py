@@ -27,8 +27,9 @@ def vector(data, sep=","):
     return [int(x) for x in data.split(sep)]
 
 
-def matrix(data, w, h):
-    return [[int(x) for x in data[r * w : r * w + w]] for r in range(h)]
+def matrix(data):
+    """Return a list of list of ints from a string matrix with one row per line."""
+    return [[int(x) for x in row] for row in data.splitlines()]
 
 
 def col(data, c):
