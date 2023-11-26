@@ -44,3 +44,16 @@ def take(n, iterable):
 def chunked(iterable, n):
     """Break iterable into lists of size n"""
     return iter(partial(take, n, iter(iterable)), [])
+
+
+def print_grid(g):
+    min_x, max_x = min(x for x, _ in g), max(x for x, _ in g)
+    min_y, max_y = min(y for _, y in g), max(y for _, y in g)
+    for y in range(min_y, max_y + 1):
+        for x in range(min_x, max_x + 1):
+            v = g.get((x, y))
+            if v is None:
+                print(".", end="")
+            else:
+                print(v, end="")
+        print("")
