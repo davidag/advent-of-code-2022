@@ -24,7 +24,7 @@ def a_star(map, start, end):
             if candidate not in costs or candidate_cost < costs[candidate]:
                 costs[candidate] = candidate_cost
                 heapq.heappush(
-                    frontier, (candidate_cost + manhattan(candidate, end), candidate)
+                    frontier, (candidate_cost + c.manhattan(candidate, end), candidate)
                 )
 
     return float("inf")
@@ -36,11 +36,6 @@ def candidate_positions(map, pos):
         candidate = (pos[0] + di, pos[1] + dj)
         if candidate in map and map[candidate] <= map[pos] + 1:
             yield candidate
-
-
-def manhattan(pos_a, pos_b) -> int:
-    (x1, y1), (x2, y2) = pos_a, pos_b
-    return abs(x1 - x2) + abs(y1 - y2)
 
 
 def parse_input(data):

@@ -3,21 +3,21 @@ from itertools import islice
 import re
 
 
-def day(n):
+def day(n: int) -> str:
     '''Load the input for day "n"'''
     return open("inputs/input{n:02d}".format(n=n)).read()
 
 
-def example(n, x):
+def example(n: int, x: str) -> str:
     return open("inputs/example{n:02d}{x}".format(n=n, x=x)).read()
 
 
-def ints(data):
+def ints(data: str) -> tuple:
     """Return a tuple of ints from a string"""
     return tuple(int(x) for x in re.findall(r"[-+]?\d+", data))
 
 
-def strings(data):
+def strings(data: str) -> list[str]:
     """Return a list of strings from a string of multiple lines"""
     return data.splitlines()
 
@@ -44,6 +44,11 @@ def take(n, iterable):
 def chunked(iterable, n):
     """Break iterable into lists of size n"""
     return iter(partial(take, n, iter(iterable)), [])
+
+
+def manhattan(a, b) -> int:
+    (x1, y1), (x2, y2) = a, b
+    return abs(x1 - x2) + abs(y1 - y2)
 
 
 def print_grid(g):
